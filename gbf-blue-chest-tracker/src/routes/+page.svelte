@@ -9,7 +9,7 @@
         <RaidAccordionItem header="Siegfried" card_img="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg">
         <Accordion multiple={true}>
             <RaidAccordionItem header="Siegfried" card_img="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg">
-                <ChestRow chest_type="blue"></ChestRow>
+                <ChestRow raid_tier="revans" raid_name="siete" chest_name="blue"></ChestRow>
             </RaidAccordionItem>
             <RaidAccordionItem header="Siegfried" card_img="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"></RaidAccordionItem>
         </Accordion>

@@ -4,11 +4,11 @@ const DropStore = writable(
     {
         "revans": {
             "siete": {
-                "weap1": 0,
-                "weap2": 0,
-                "mat": 0,
-                "sand": 0
-            }
+                "blue": {
+                    "weap1": 0, "weap2": 0, "sand": 0,
+                    "mat1": 0, "mat2": 0, "mat3": 0, "mat4": 0, "mat10": 0
+                }
+            },
         }
     }
 );
