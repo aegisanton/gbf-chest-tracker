@@ -2,18 +2,27 @@
  import { AccordionItem, Accordion } from 'flowbite-svelte';
  import RaidAccordionItem from '$lib/RaidAccordionItem.svelte';
  import ChestRow from '$lib/ChestRow.svelte';
+ import DropStore from '../store';
+
+ let headers = {
+    "revans": "Revans", "siete": "Seofon", "sieg": "Siegfried", "diaspora": "Diaspora", "mugen": "Mugen", "cosmos": "Cosmos", "agastia": "Agastia"
+ }
 </script>
 
 <div class="container w-full mx-auto mt-20">
     <Accordion multiple={true}>
-        <RaidAccordionItem header="Siegfried" card_img="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg">
-        <Accordion multiple={true}>
-            <RaidAccordionItem header="Siegfried" card_img="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg">
-                <ChestRow raid_tier="revans" raid_name="siete" chest_name="blue"></ChestRow>
-            </RaidAccordionItem>
-            <RaidAccordionItem header="Siegfried" card_img="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"></RaidAccordionItem>
-        </Accordion>
+    {#each Object.entries($DropStore) as [raid_tier, value]}
+        <RaidAccordionItem header={headers[raid_tier]} card_img="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg">
+            <Accordion multiple={true}>
+                {#each Object.entries($DropStore[raid_tier]) as [raid_name, value]}
+                    <RaidAccordionItem header={headers[raid_name]} card_img="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg">
+                    {#each Object.entries($DropStore[raid_tier][raid_name]) as [chest_name, value]}
+                        <ChestRow raid_tier={raid_tier} raid_name={raid_name} chest_name={chest_name}></ChestRow>
+                    {/each}
+                    </RaidAccordionItem>
+                {/each}
+            </Accordion>
         </RaidAccordionItem>
-        <RaidAccordionItem header="Siegfried" card_img="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"></RaidAccordionItem>
+    {/each}
     </Accordion>
 </div>
