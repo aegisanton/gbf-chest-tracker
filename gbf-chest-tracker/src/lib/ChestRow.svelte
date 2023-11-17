@@ -1,4 +1,6 @@
 <script>
+  import { browser } from "$app/environment"
+
   import { Avatar } from "flowbite-svelte";
   import ChestItem from "./ChestItem.svelte";
   import DropStore from "../store";
@@ -96,6 +98,9 @@
   }
 
   $: $DropStore, countDrops(raid_tier, raid_name, chest_name);
+  $: {
+    if (browser) localStorage.setItem("DropStore", JSON.stringify($DropStore))
+  }
 </script>
 
 <div class="grid grid-cols-5 rounded-lg gap-2 space-x-4 p-5 bg-gray-200 justify-items-center items-center">
