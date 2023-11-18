@@ -52,21 +52,29 @@
   async function getUserData() {
     if ($session.user?.uid) {
       let q = doc(db, "drops", $session.user?.uid);
-      const docSnap = await getDoc(q)
-      const obj = docSnap.data()
-
-      if (obj) {
-        for (const [raid_tier, obj1] of Object.entries(obj)) {
-          for (const [raid_name, obj2] of Object.entries(obj1)) {
-            for (const [chest_name, obj3] of Object.entries(obj2)) {
-              for (const [item_name, val] of Object.entries(obj3)) {
-                $DropStore[raid_tier][raid_name][chest_name][item_name] = val
+      const docSnap = await getDoc(q).then((res) => {
+        const obj = res.data()
+        if (obj) {
+          for (const [raid_tier, obj1] of Object.entries(obj)) {
+            for (const [raid_name, obj2] of Object.entries(obj1)) {
+              for (const [chest_name, obj3] of Object.entries(obj2)) {
+                for (const [item_name, val] of Object.entries(obj3)) {
+                  $DropStore[raid_tier][raid_name][chest_name][item_name] = val
+                }
               }
             }
           }
-        }
-      }
+        }       
+      })
+      .catch((error) => {
+      return error
+      })
+
+      //let q2 = doc(db, "syncs", $session.user?.uid);
+      //const docSnap2 = await getDoc(q2)
+      //const obj2 = docSnap.data()
     }
+
   }
 
   async function resetData() {
@@ -119,7 +127,12 @@
   async function syncData() {
     if ($session.user?.uid) {
       let q = doc(db, "drops", $session.user?.uid);
-      await setDoc(q, $DropStore);
+      await setDoc(q, $DropStore).then(() => {
+
+      })
+      .catch((error) => {
+        return error;
+      });
     }
   }
  </script>

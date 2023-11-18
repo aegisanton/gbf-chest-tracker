@@ -11,6 +11,7 @@ export type SessionState = {
  user: User | null;
  loading?: boolean;
  loggedIn?: boolean;
+ lastSync?: Date;
 };
 
 export const session = <Writable<SessionState>>writable();
