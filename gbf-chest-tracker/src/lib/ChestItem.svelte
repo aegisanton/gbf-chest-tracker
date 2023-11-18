@@ -1,5 +1,5 @@
 <script>
-  import DropStore from "../store";
+  import DropStore from "../DropStore";
   export let item_img = ""
   export let item_img_alt = ""
   export let raid_tier = ""

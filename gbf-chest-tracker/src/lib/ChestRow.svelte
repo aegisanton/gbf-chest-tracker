@@ -1,7 +1,7 @@
 <script>
   import { Avatar } from "flowbite-svelte";
   import ChestItem from "./ChestItem.svelte";
-  import DropStore from "../store";
+  import DropStore from "../DropStore";
 
   // Chest images
   import red_chest_img from "$lib/assets/Icon_Red_Chest.png";

@@ -3,7 +3,7 @@
 
  import RaidAccordionItem from '$lib/RaidAccordionItem.svelte';
  import ChestRow from '$lib/ChestRow.svelte';
- import DropStore from '../store';
+ import DropStore from '../DropStore';
  import banner from '$lib/assets/banner-test.png'
 
  let headers = {

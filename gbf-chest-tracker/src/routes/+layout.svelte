@@ -15,7 +15,8 @@
 
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Dropdown, DropdownItem, DropdownHeader, DropdownDivider, Button } from 'flowbite-svelte';
 
-  import DropStore from '../store';
+  import DropStore from '../DropStore';
+  import SyncStore from "../SyncStore";
 
   import chest from '$lib/assets/Icon_Blue_Chest.png'
 
@@ -23,6 +24,8 @@
  
   let loading: boolean = true;
   let loggedIn: boolean = false;
+
+  let syncing = false
  
   session.subscribe((cur: any) => {
    loading = cur?.loading;
@@ -46,13 +49,18 @@
    if (loggedIn) {
     await getUserData()
    }
+       
+   const interval = setInterval(syncData, 900000); // 15 minutes
+
+  return () => clearInterval(interval)
 
   });
 
   async function getUserData() {
     if ($session.user?.uid) {
       let q = doc(db, "drops", $session.user?.uid);
-      const docSnap = await getDoc(q).then((res) => {
+      const docSnap = await getDoc(q)
+      .then((res) => {
         const obj = res.data()
         if (obj) {
           for (const [raid_tier, obj1] of Object.entries(obj)) {
@@ -67,17 +75,24 @@
         }       
       })
       .catch((error) => {
-      return error
+        return error
       })
 
-      //let q2 = doc(db, "syncs", $session.user?.uid);
-      //const docSnap2 = await getDoc(q2)
-      //const obj2 = docSnap.data()
+      let q2 = doc(db, "syncs", $session.user?.uid);
+      const docSnap2 = await getDoc(q2)
+      .then((res) => {
+        const obj2 = res.data() 
+        if (obj2) {
+          $SyncStore.last_sync = new Date(obj2.last_sync.seconds*1000).toLocaleString()
+        }
+      })
+      .catch((error) => {
+        return error
+      })
     }
-
   }
 
-  async function resetData() {
+  function resetData() {
     for (const [raid_tier, obj1] of Object.entries($DropStore)) {
       for (const [raid_name, obj2] of Object.entries(obj1)) {
         for (const [chest_name, obj3] of Object.entries(obj2)) {
@@ -121,19 +136,33 @@
     .catch((error) => {
     return error;
     });
-    await resetData()
+    resetData()
+    $SyncStore.last_sync = undefined
+
   }
 
   async function syncData() {
+    syncing = true
     if ($session.user?.uid) {
       let q = doc(db, "drops", $session.user?.uid);
-      await setDoc(q, $DropStore).then(() => {
+      await setDoc(q, $DropStore)
+      .catch((error) => {
+        syncing = false
+        return error;
+      });
 
+      let q2 = doc(db, "syncs", $session.user?.uid);
+      const timestamp = new Date()
+      await setDoc(q2, {"last_sync": timestamp})
+      .then(() => {
+        $SyncStore.last_sync = timestamp
       })
       .catch((error) => {
+        syncing = false
         return error;
       });
     }
+    syncing = false
   }
  </script>
 
@@ -149,11 +178,17 @@
         {#if loggedIn}
           <div class="flex items-center gap-2 md:order-2 hover:cursor-pointer">
             <Button pill={true} outline={true} class="!p-2" size="lg" on:click={syncData}>
-              <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 1v5h-5M2 19v-5h5m10-4a8 8 0 0 1-14.947 3.97M1 10a8 8 0 0 1 14.947-3.97"/>
-              </svg>
+              {#if syncing}
+                <svg class="animate-spin w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 1v5h-5M2 19v-5h5m10-4a8 8 0 0 1-14.947 3.97M1 10a8 8 0 0 1 14.947-3.97"/>
+                </svg>
+              {:else}
+                <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 1v5h-5M2 19v-5h5m10-4a8 8 0 0 1-14.947 3.97M1 10a8 8 0 0 1 14.947-3.97"/>
+                </svg>
+              {/if}
             </Button>
-            <p>Last sync:</p>
+            <p class="text-sm"><i>Last sync: {($SyncStore.last_sync ? $SyncStore.last_sync.toLocaleString() : "N/A")}</i></p>
           </div>
           <div class="flex items-center gap-4 md:order-2 hover:cursor-pointer">
             <Avatar id="avatar-menu" src={$session.user?.photoURL} />
