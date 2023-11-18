@@ -10,11 +10,13 @@
   import { signOut } from 'firebase/auth';
   import { auth } from '$lib/firebase.client';
   import { db } from '$lib/firebase.client';
-  import { doc, getDoc } from 'firebase/firestore';
+  import { doc, getDoc, setDoc } from 'firebase/firestore';
 
   import type { LayoutData } from './$types';
 
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Dropdown, DropdownItem, DropdownHeader, DropdownDivider, Button } from 'flowbite-svelte';
+
+  import DropStore from '../store';
 
   import chest from '$lib/assets/Icon_Blue_Chest.png'
 
@@ -45,29 +47,28 @@
    if (loggedIn) {
     let q = doc(db, "drops", "example");
     const docSnap = await getDoc(q)
-    console.log(docSnap.data())
    }
 
   });
 
   async function loginWithGoogle() {
-  const provider = new GoogleAuthProvider();
-  await signInWithPopup(auth, provider)
-   .then((result) => {
-    const { displayName, email, photoURL, uid } = result?.user;
-    session.set({
-     loggedIn: true,
-     user: {
-      displayName,
-      email,
-      photoURL,
-      uid
-     }
+    const provider = new GoogleAuthProvider();
+    await signInWithPopup(auth, provider)
+    .then((result) => {
+      const { displayName, email, photoURL, uid } = result?.user;
+      session.set({
+      loggedIn: true,
+      user: {
+        displayName,
+        email,
+        photoURL,
+        uid
+      }
+      });
+    })
+    .catch((error) => {
+      return error;
     });
-   })
-   .catch((error) => {
-    return error;
-   });
   }
 
   function logOut() {
@@ -82,6 +83,13 @@
     .catch((error) => {
     return error;
     });
+  }
+
+  async function syncData() {
+    if ($session.user?.uid) {
+      let q = doc(db, "drops", $session.user?.uid);
+      await setDoc(q, $DropStore);
+    }
   }
  </script>
 
@@ -98,8 +106,7 @@
           <div class="flex items-center gap-2 md:order-2 hover:cursor-pointer">
             <Avatar id="avatar-menu" src={$session.user?.photoURL} />
             <NavHamburger class1="w-full md:flex md:w-auto md:order-1" />
-            <Button pill={true} outline={true} class="!p-2" size="lg">
-              Sync
+            <Button pill={true} outline={true} class="!p-2" size="lg" on:click={syncData}>
             </Button>
           </div>
           <Dropdown placement="bottom" triggeredBy="#avatar-menu">
