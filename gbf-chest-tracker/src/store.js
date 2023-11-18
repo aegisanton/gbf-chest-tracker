@@ -41,6 +41,6 @@ const DropStore = writable(
             }
         }
     }
-);
+)
 
 export default DropStore;
