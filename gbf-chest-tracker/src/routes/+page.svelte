@@ -1,10 +1,4 @@
 <script>
- import { session } from '$lib/session';
- import { auth } from '$lib/firebase.client';
- import {
-  GoogleAuthProvider,
-  signInWithPopup
- } from 'firebase/auth';
  import { goto } from '$app/navigation';
  import { Accordion } from 'flowbite-svelte';
  import RaidAccordionItem from '$lib/RaidAccordionItem.svelte';
@@ -19,35 +13,7 @@
  let raid_banners = {
 
  }
-
- async function loginWithGoogle() {
-  const provider = new GoogleAuthProvider();
-  await signInWithPopup(auth, provider)
-   .then((result) => {
-    const { displayName, email, photoURL, uid } = result?.user;
-    session.set({
-     loggedIn: true,
-     user: {
-      displayName,
-      email,
-      photoURL,
-      uid
-     }
-    });
-
-    goto('/');
-   })
-   .catch((error) => {
-    return error;
-   });
- }
 </script>
-
-<div class="login-form">
-    <h1>Login</h1>
-   
-    <button on:click={loginWithGoogle}>Login with Google</button>
-    </div>
 
 <div class="container w-full mx-auto mt-20">
     <Accordion multiple={true}>
