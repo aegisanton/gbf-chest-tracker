@@ -6,12 +6,15 @@
   } from 'firebase/auth';
   import { onMount } from 'svelte';
   import { session } from '$lib/session';
-  import { goto, invalidateAll } from '$app/navigation';
+  import { invalidateAll } from '$app/navigation';
   import { signOut } from 'firebase/auth';
   import { auth } from '$lib/firebase.client';
+  import { db } from '$lib/firebase.client';
+  import { doc, getDoc } from 'firebase/firestore';
+
   import type { LayoutData } from './$types';
 
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Dropdown, DropdownItem, DropdownHeader, DropdownDivider } from 'flowbite-svelte';
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Dropdown, DropdownItem, DropdownHeader, DropdownDivider, Button } from 'flowbite-svelte';
 
   import chest from '$lib/assets/Icon_Blue_Chest.png'
 
@@ -25,7 +28,7 @@
    loggedIn = cur?.loggedIn;
   });
  
-  onMount(async () => {
+  onMount(async () => {   
    const user: any = await data.getAuthUser();
  
    const loggedIn = !!user && user?.emailVerified;
@@ -38,6 +41,12 @@
      loading: false
     };
    });
+
+   if (loggedIn) {
+    let q = doc(db, "drops", "example");
+    const docSnap = await getDoc(q)
+    console.log(docSnap.data())
+   }
 
   });
 
@@ -86,9 +95,12 @@
           <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Granblue Fantasy Chest Tracker</span>
         </NavBrand>
         {#if loggedIn}
-          <div class="flex items-center md:order-2 hover:cursor-pointer">
+          <div class="flex items-center gap-2 md:order-2 hover:cursor-pointer">
             <Avatar id="avatar-menu" src={$session.user?.photoURL} />
             <NavHamburger class1="w-full md:flex md:w-auto md:order-1" />
+            <Button pill={true} outline={true} class="!p-2" size="lg">
+              Sync
+            </Button>
           </div>
           <Dropdown placement="bottom" triggeredBy="#avatar-menu">
             <DropdownHeader>
@@ -102,10 +114,10 @@
           <button on:click={loginWithGoogle}>Login with Google</button>
         </div>
         {/if}
-        <NavUl>
+        <!--<NavUl>
           <NavLi href="/" active={true}>Home</NavLi>
           <NavLi href="/">Statistics</NavLi>
-        </NavUl>
+        </NavUl>-->
       </Navbar>
     </div>
 {/if}

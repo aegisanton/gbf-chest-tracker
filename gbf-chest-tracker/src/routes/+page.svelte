@@ -1,6 +1,6 @@
 <script>
- import { goto } from '$app/navigation';
  import { Accordion } from 'flowbite-svelte';
+
  import RaidAccordionItem from '$lib/RaidAccordionItem.svelte';
  import ChestRow from '$lib/ChestRow.svelte';
  import DropStore from '../store';

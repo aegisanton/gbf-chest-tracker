@@ -1,5 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { connectAuthEmulator, getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
+
 import type { FirebaseApp } from 'firebase/app';
 import type { Firestore } from 'firebase/firestore';
 import type { Auth } from 'firebase/auth';
@@ -17,7 +19,7 @@ const firebaseConfig = {
  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
- projectID: import.meta.env.VITE_FIREBASE_PROJECT_ID
+ projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID
 };
 
 export const initializeFirebase = () => {
@@ -27,6 +29,7 @@ export const initializeFirebase = () => {
  if (!app) {
   app = initializeApp(firebaseConfig);
   auth = getAuth(app);
+  db = getFirestore(app);
 
   if (firebaseConfig.useEmulator) {
    connectAuthEmulator(auth, 'localhost:9099');
