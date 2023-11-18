@@ -6,7 +6,6 @@
   } from 'firebase/auth';
   import { onMount } from 'svelte';
   import { session } from '$lib/session';
-  import { invalidateAll } from '$app/navigation';
   import { signOut } from 'firebase/auth';
   import { auth } from '$lib/firebase.client';
   import { db } from '$lib/firebase.client';
@@ -45,6 +44,12 @@
    });
 
    if (loggedIn) {
+    await getUserData()
+   }
+
+  });
+
+  async function getUserData() {
     if ($session.user?.uid) {
       let q = doc(db, "drops", $session.user?.uid);
       const docSnap = await getDoc(q)
@@ -62,10 +67,20 @@
         }
       }
     }
-   }
+  }
 
-  });
-
+  async function resetData() {
+    for (const [raid_tier, obj1] of Object.entries($DropStore)) {
+      for (const [raid_name, obj2] of Object.entries(obj1)) {
+        for (const [chest_name, obj3] of Object.entries(obj2)) {
+          for (const [item_name, val] of Object.entries(obj3)) {
+            $DropStore[raid_tier][raid_name][chest_name][item_name] = 0
+          }
+        }
+      }
+    }
+  }
+    
   async function loginWithGoogle() {
     const provider = new GoogleAuthProvider();
     await signInWithPopup(auth, provider)
@@ -79,25 +94,26 @@
         photoURL,
         uid
       }
-      });
+      })
     })
     .catch((error) => {
       return error;
     });
+    await getUserData();
   }
 
-  function logOut() {
-    signOut(auth)
+  async function logOut() {
+    await signOut(auth)
     .then(() => {
     session.set({
      loggedIn: false,
      user: null
     });
-    invalidateAll();
     })
     .catch((error) => {
     return error;
     });
+    await resetData()
   }
 
   async function syncData() {
@@ -119,10 +135,16 @@
         </NavBrand>
         {#if loggedIn}
           <div class="flex items-center gap-2 md:order-2 hover:cursor-pointer">
+            <Button pill={true} outline={true} class="!p-2" size="lg" on:click={syncData}>
+              <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 1v5h-5M2 19v-5h5m10-4a8 8 0 0 1-14.947 3.97M1 10a8 8 0 0 1 14.947-3.97"/>
+              </svg>
+            </Button>
+            <p>Last sync:</p>
+          </div>
+          <div class="flex items-center gap-4 md:order-2 hover:cursor-pointer">
             <Avatar id="avatar-menu" src={$session.user?.photoURL} />
             <NavHamburger class1="w-full md:flex md:w-auto md:order-1" />
-            <Button pill={true} outline={true} class="!p-2" size="lg" on:click={syncData}>
-            </Button>
           </div>
           <Dropdown placement="bottom" triggeredBy="#avatar-menu">
             <DropdownHeader>
