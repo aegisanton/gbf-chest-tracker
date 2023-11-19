@@ -39,6 +39,13 @@ const DropStore = writable(
                     "mat1": 0, "mat2": 0, "mat3": 0, "mat4": 0, "mat10": 0
                 }
             }
+        },
+        "gold_bar": {
+            "pbaha": {
+                "blue": {
+                    "gbar": 0
+                }
+            }
         }
     }
 )

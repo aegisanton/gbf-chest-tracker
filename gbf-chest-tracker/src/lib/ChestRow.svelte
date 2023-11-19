@@ -10,6 +10,7 @@
 
   // Material images
   import sand from "$lib/assets/sand.jpg";
+  import gold_bar from "$lib/assets/gold-bar.jpg";
 
   import siete_weap1 from "$lib/assets/siete-weap1.jpg";
   import siete_weap2 from "$lib/assets/siete-weap2.jpg";
@@ -60,6 +61,11 @@
       "agastia": {
         "weap1": agastia_weap1, "weap2": agastia_weap2, "sand": sand,
         "mat1": agastia_mat, "mat2": agastia_mat, "mat3": agastia_mat, "mat4": agastia_mat, "mat10": agastia_mat
+      }
+    },
+    "gold_bar": {
+      "pbaha": {
+        "gbar": gold_bar
       }
     }
   }

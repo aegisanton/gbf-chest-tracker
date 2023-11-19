@@ -6,7 +6,8 @@
  import DropStore from '../DropStore';
 
  let headers = {
-    "revans": "Revans", "siete": "Seofon", "sieg": "Siegfried", "diaspora": "Diaspora", "mugen": "Mugen", "cosmos": "Cosmos", "agastia": "Agastia"
+    "revans": "Revans", "siete": "Seofon", "sieg": "Siegfried", "diaspora": "Diaspora", "mugen": "Mugen", "cosmos": "Cosmos", "agastia": "Agastia",
+    "gold_bar": "Gold Bar Raids", "pbaha": "Proto Bahamut HL"
  }
 
  let raid_banners = {
@@ -17,7 +18,7 @@
 <div class="container w-full mx-auto mt-20">
     <Accordion multiple={true}>
     {#each Object.entries($DropStore) as [raid_tier, value]}
-        <RaidAccordionItem header={headers[raid_tier]} banner={raid_tier}>
+        <RaidAccordionItem header={headers[raid_tier]} banner={raid_tier} raid_tier={true}>
             <Accordion multiple={true}>
                 {#each Object.entries($DropStore[raid_tier]) as [raid_name, value]}
                     <RaidAccordionItem header={headers[raid_name]} banner={raid_name}>
