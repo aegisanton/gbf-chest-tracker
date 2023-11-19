@@ -9,32 +9,59 @@
   import gold_chest_img from "$lib/assets/Icon_Gold_Chest.png";
 
   // Material images
+
+  // Rare drops
   import sand from "$lib/assets/sand.jpg";
   import gold_bar from "$lib/assets/gold-bar.jpg";
 
+  // Character mastery
+  import low_ring from "$lib/assets/low-ring.jpg"
+  import mid_ring from "$lib/assets/mid-ring.jpg"
+  import red_ring from "$lib/assets/red-ring.jpg"
+  import fire_earring from "$lib/assets/fire-earring.jpg"
+  import wind_earring from "$lib/assets/wind-earring.jpg"
+  import water_earring from "$lib/assets/water-earring.jpg"
+  import earth_earring from "$lib/assets/earth-earring.jpg"
+  import light_earring from "$lib/assets/light-earring.jpg"
+  import dark_earring from "$lib/assets/dark-earring.jpg"
+
+  // Common mats
+  import fire_urn from "$lib/assets/fire-urn.jpg"
+  import wind_urn from "$lib/assets/wind-urn.jpg"
+  import water_urn from "$lib/assets/water-urn.jpg"
+  import earth_urn from "$lib/assets/earth-urn.jpg"
+  import light_urn from "$lib/assets/light-urn.jpg"
+  import dark_urn from "$lib/assets/dark-urn.jpg"
+  import silver_centrum from "$lib/assets/silver-centrum.jpg"
+
+  // Revans
   import siete_weap1 from "$lib/assets/siete-weap1.jpg";
   import siete_weap2 from "$lib/assets/siete-weap2.jpg";
   import siete_mat from "$lib/assets/siete-mat.jpg";
-
   import sieg_weap1 from "$lib/assets/sieg-weap1.jpg";
   import sieg_weap2 from "$lib/assets/sieg-weap2.jpg";
   import sieg_mat from "$lib/assets/sieg-mat.jpg";
-
   import diaspora_weap1 from "$lib/assets/diaspora-weap1.jpg";
   import diaspora_weap2 from "$lib/assets/diaspora-weap2.jpg";
   import diaspora_mat from "$lib/assets/diaspora-mat.jpg";
-
   import mugen_weap1 from "$lib/assets/mugen-weap1.jpg";
   import mugen_weap2 from "$lib/assets/mugen-weap2.jpg";
   import mugen_mat from "$lib/assets/mugen-mat.jpg";
-
   import cosmos_weap1 from "$lib/assets/cosmos-weap1.jpg";
   import cosmos_weap2 from "$lib/assets/cosmos-weap2.jpg";
   import cosmos_mat from "$lib/assets/cosmos-mat.jpg";
-
   import agastia_weap1 from "$lib/assets/agastia-weap1.jpg";
   import agastia_weap2 from "$lib/assets/agastia-weap2.jpg";
   import agastia_mat from "$lib/assets/agastia-mat.jpg";
+
+  // 6D
+  import ewiyar_mat from "$lib/assets/ewiyar-mat.jpg"
+  import wilnas_mat from "$lib/assets/wilnas-mat.jpg"
+  import galleon_mat from "$lib/assets/galleon-mat.jpg"
+  import wamdus_mat from "$lib/assets/wamdus-mat.jpg"
+  import fediel_mat from "$lib/assets/fediel-mat.jpg"
+  import luwoh_mat from "$lib/assets/luwoh-mat.jpg"
+
   
   let drop_imgs = {
     "revans": {
@@ -64,8 +91,48 @@
       }
     },
     "gold_bar": {
-      "pbaha": {
-        "gbar": gold_bar
+      "pbahahl": {
+        "gbar": gold_bar, "low_ring": low_ring, "mid_ring": mid_ring, "red_ring": red_ring
+      }
+    },
+    "6d": {
+      "ewiyar": {
+        "sand": sand, "earring": wind_earring, "mat": ewiyar_mat, "urn": wind_urn
+      },
+      "galleon": {
+        "sand": sand, "earring": earth_earring, "mat": galleon_mat, "urn": earth_urn
+      },
+      "wamdus": {
+        "sand": sand, "earring": water_earring, "mat": wamdus_mat, "urn": water_urn
+      },
+      "wilnas": {
+        "sand": sand, "earring": fire_earring, "mat": wilnas_mat, "urn": fire_urn
+      },
+      "luwoh": {
+        "sand": sand, "earring": light_earring, "mat": luwoh_mat, "urn": light_urn
+      },
+      "fediel": {
+        "sand": sand, "earring": dark_earring, "mat": fediel_mat, "urn": dark_urn
+      }
+    },
+    "ennead": {
+      "ra": {
+        "sand": sand, "silver_cent": silver_centrum, "urn": wind_urn
+      },
+      "bennu": {
+        "sand": sand, "silver_cent": silver_centrum, "urn": earth_urn
+      },
+      "tefnut": {
+        "sand": sand, "silver_cent": silver_centrum, "urn": water_urn
+      },
+      "atum": {
+        "sand": sand, "silver_cent": silver_centrum, "urn": fire_urn
+      },
+      "horus": {
+        "sand": sand, "silver_cent": silver_centrum, "urn": light_urn
+      },
+      "osiris": {
+        "sand": sand, "silver_cent": silver_centrum, "urn": dark_urn
       }
     }
   }

@@ -14,6 +14,7 @@
   import type { LayoutData } from './$types';
 
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Dropdown, DropdownItem, DropdownHeader, DropdownDivider, Button } from 'flowbite-svelte';
+  import { Footer, FooterCopyright, FooterLinkGroup, FooterBrand, FooterLink } from 'flowbite-svelte';
 
   import DropStore from '../DropStore';
   import SyncStore from "../SyncStore";
@@ -67,7 +68,10 @@
             for (const [raid_name, obj2] of Object.entries(obj1)) {
               for (const [chest_name, obj3] of Object.entries(obj2)) {
                 for (const [item_name, val] of Object.entries(obj3)) {
-                  $DropStore[raid_tier][raid_name][chest_name][item_name] = val
+                  let exists = $DropStore[raid_tier][raid_name][chest_name][item_name]
+                  if (exists) {
+                    $DropStore[raid_tier][raid_name][chest_name][item_name] = val
+                  }
                 }
               }
             }
@@ -176,8 +180,8 @@
           <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Granblue Fantasy Chest Tracker</span>
         </NavBrand>
         {#if loggedIn}
-          <div class="flex items-center gap-2 md:order-2 hover:cursor-pointer">
-            <Button pill={true} outline={true} class="!p-2" size="lg" on:click={syncData}>
+          <div class="flex items-center gap-2 md:order-2">
+            <Button pill={true} outline={true} class="!p-2 hover:cursor-pointer" size="lg" on:click={syncData}>
               {#if syncing}
                 <svg class="animate-spin w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 1v5h-5M2 19v-5h5m10-4a8 8 0 0 1-14.947 3.97M1 10a8 8 0 0 1 14.947-3.97"/>
@@ -215,3 +219,7 @@
 {/if}
 
 <slot />
+
+<!--<Footer>
+  <FooterCopyright href="/" by="Anton Chen" year={2022} />
+</Footer>-->

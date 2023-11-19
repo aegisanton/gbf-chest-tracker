@@ -23,12 +23,17 @@ export default {
         }
       },
       backgroundImage: {
-        revansBanner: "url('/src/lib/assets/revans-banner.png')",
+        raidBanner: "url('/src/lib/assets/raid-banner.png')",
+
         sieteBanner: "url('/src/lib/assets/siete-banner.png')",
         siegBanner: "url('/src/lib/assets/sieg-banner.png')",
         cosmosBanner: "url('/src/lib/assets/cosmos-banner.png')",
         mugenBanner: "url('/src/lib/assets/mugen-banner.png')",
-        agastiaBanner: "url('/src/lib/assets/agastia-banner.png')"
+        agastiaBanner: "url('/src/lib/assets/agastia-banner.png')",
+        diasporaBanner: "url('/src/lib/assets/diaspora-banner.png')",
+
+        pbhlBanner: "url('/src/lib/assets/pbhl-banner.png')"
+
       },
     }
   }

@@ -7,7 +7,9 @@
 
  let headers = {
     "revans": "Revans", "siete": "Seofon", "sieg": "Siegfried", "diaspora": "Diaspora", "mugen": "Mugen", "cosmos": "Cosmos", "agastia": "Agastia",
-    "gold_bar": "Gold Bar Raids", "pbaha": "Proto Bahamut HL"
+    "gold_bar": "Gold Bar Raids", "pbahahl": "Proto Bahamut HL", "akasha": "Akasha", "gohl": "Grand Order HL",
+    "6d": "Six Dragons", "ewiyar": "Ewiyar", "galleon": "Galleon", "wamdus": "Wamdus", "wilnas": "Wilnas", "luwoh": "Lu Woh", "fediel": "Fediel",
+    "ennead": "Ennead", "ra": "Ra", "bennu": "Bennu", "tefnut": "Tefnut", "atum": "Atum", "horus": "Horus", "osiris": "Osiris"
  }
 
  let raid_banners = {
