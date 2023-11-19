@@ -1,13 +1,25 @@
 <script>
   import { AccordionItem } from 'flowbite-svelte'
-  import banner_test from '$lib/assets/banner-test.png'
-  export let banner_img = ""
+  export let banner = ""
   export let header = ""
+
+  let banner_imgs = {
+
+  }
 </script>
 
 
-<AccordionItem class="flex my-1 rounded-lg items-center justify-between w-full font-medium text-left h-20 bg-[url('{banner_img}')]" borderClass="border-none" borderOpenClass="border-none" borderBottomClass="border-none" borderSharedClass="border-none">
-  <span slot="header">{header}</span>
+<AccordionItem 
+class="flex bg-sieteBanner bg-left bg-cover my-1 rounded-lg items-center justify-between w-full font-medium text-left h-20" 
+classActive="ring-0"
+classInactive="opacity-50"
+borderClass="border-none" 
+borderOpenClass="border-none" 
+borderBottomClass="border-none" 
+borderSharedClass="border-none">
+  <span slot="header">
+    <p class="text-4xl indent-80 opacity-90 font-extrabold tracking-widest text-white uppercase">{header}</p>
+  </span> 
   <div slot="arrowup"></div><div slot="arrowdown"></div> <!-- Remove arrows -->
   <slot />
 </AccordionItem>
