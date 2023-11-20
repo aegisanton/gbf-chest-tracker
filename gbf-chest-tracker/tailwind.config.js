@@ -37,7 +37,16 @@ export default {
         raBanner: "url('/src/lib/assets/ra-banner.png')",
         horusBanner: "url('/src/lib/assets/horus-banner.png')",
         osirisBanner: "url('/src/lib/assets/osiris-banner.png')",
-        atumBanner: "url('/src/lib/assets/atum-banner.png')"
+        atumBanner: "url('/src/lib/assets/atum-banner.png')",
+
+        tiamalBanner: "url('/src/lib/assets/tiamal-banner.png')",
+        levimalBanner: "url('/src/lib/assets/levimal-banner.png')",
+        lumimalBanner: "url('/src/lib/assets/lumimal-banner.png')",
+        animusBanner: "url('/src/lib/assets/animus-banner.png')",
+        phronesisBanner: "url('/src/lib/assets/phronesis-banner.png')",
+        legionBanner: "url('/src/lib/assets/legion-banner.png')",
+
+        subahaBanner: "url('/src/lib/assets/subaha-banner.png')"
       },
     }
   }

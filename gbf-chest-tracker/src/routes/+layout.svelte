@@ -17,6 +17,7 @@
   import { Footer, FooterCopyright, FooterLinkGroup, FooterBrand, FooterLink } from 'flowbite-svelte';
 
   import DropStore from '../DropStore';
+  import RateStore from "../RateStore";
   import SyncStore from "../SyncStore";
 
   import chest from '$lib/assets/Icon_Blue_Chest.png'
