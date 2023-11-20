@@ -64,7 +64,7 @@
       .then((res) => {
         const obj = res.data()
         if (obj) {
-          for (const [raid_tier, obj1] of Object.entries(obj)) {
+          for (const [raid_tier, obj1] of Object.entries(obj.drops)) {
             for (const [raid_name, obj2] of Object.entries(obj1)) {
               for (const [chest_name, obj3] of Object.entries(obj2)) {
                 for (const [item_name, val] of Object.entries(obj3)) {
@@ -76,19 +76,8 @@
               }
             }
           }
-        }       
-      })
-      .catch((error) => {
-        return error
-      })
-
-      let q2 = doc(db, "syncs", $session.user?.uid);
-      const docSnap2 = await getDoc(q2)
-      .then((res) => {
-        const obj2 = res.data() 
-        if (obj2) {
-          $SyncStore.last_sync = new Date(obj2.last_sync.seconds*1000).toLocaleString()
-        }
+        }   
+        $SyncStore.last_sync = new Date(obj.last_sync.seconds*1000).toLocaleString()    
       })
       .catch((error) => {
         return error
@@ -106,6 +95,7 @@
         }
       }
     }
+  $SyncStore.last_sync = null
   }
     
   async function loginWithGoogle() {
@@ -141,23 +131,15 @@
     return error;
     });
     resetData()
-    $SyncStore.last_sync = undefined
-
   }
 
   async function syncData() {
     syncing = true
     if ($session.user?.uid) {
       let q = doc(db, "drops", $session.user?.uid);
-      await setDoc(q, $DropStore)
-      .catch((error) => {
-        syncing = false
-        return error;
-      });
-
-      let q2 = doc(db, "syncs", $session.user?.uid);
       const timestamp = new Date()
-      await setDoc(q2, {"last_sync": timestamp})
+      const data =  {"last_sync": timestamp, "drops": $DropStore}
+      await setDoc(q, data)
       .then(() => {
         $SyncStore.last_sync = timestamp
       })
@@ -207,7 +189,11 @@
           </Dropdown>
         {:else}
         <div class="flex items-center md:order-2">
-          <button on:click={loginWithGoogle}>Login with Google</button>
+          <Button on:click={loginWithGoogle}>
+            <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 18 19">
+              <path fill-rule="evenodd" d="M8.842 18.083a8.8 8.8 0 0 1-8.65-8.948 8.841 8.841 0 0 1 8.8-8.652h.153a8.464 8.464 0 0 1 5.7 2.257l-2.193 2.038A5.27 5.27 0 0 0 9.09 3.4a5.882 5.882 0 0 0-.2 11.76h.124a5.091 5.091 0 0 0 5.248-4.057L14.3 11H9V8h8.34c.066.543.095 1.09.088 1.636-.086 5.053-3.463 8.449-8.4 8.449l-.186-.002Z" clip-rule="evenodd"/>
+            </svg> <p class="ml-2">Google Login</p>
+          </Button>
         </div>
         {/if}
         <!--<NavUl>
