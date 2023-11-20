@@ -44,6 +44,32 @@ const DropStore = writable({
             "blue": {
                 "gbar": 0, "low_ring": 0, "mid_ring": 0, "red_ring": 0
             }
+        },
+        "akasha": {
+            "blue": {
+                "gbar": 0, "low_ring": 0, "mid_ring": 0, "red_ring": 0, "weap_plus1": 0, "weap_plus2": 0, "weap_plus3": 0,
+                "silver_cent": 0, "silver_merit": 0, "gold_merit": 0, "red_merit": 0, "mat": 0
+            }
+        },
+        "gohl": {
+            "blue": {
+                "gbar": 0, "low_ring": 0, "mid_ring": 0, "red_ring": 0, 
+                "silver_cent": 0, "silver_merit": 0, "gold_merit": 0, "red_merit": 0, "mat": 0
+            }
+        }
+    },
+    "super_ult": {
+        "subaha": {
+            "gold": {
+                "sand": 0, "blue_crystal": 0, "wind_urn": 0, "earth_urn": 0,
+                "water_urn": 0, "fire_urn": 0, "light_urn": 0, "dark_urn": 0
+            }
+        },
+        "hexa": {
+            "gold": {
+                "sand": 0, "blue_crystal": 0, "wind_earring": 0, "earth_earring": 0,
+                "water_earring": 0, "fire_earring": 0, "light_earring": 0, "dark_earring": 0
+            }
         }
     },
     "6d": {
@@ -69,7 +95,7 @@ const DropStore = writable({
         },
         "luwoh": {
             "gold": {
-                "sand": 0, "earring": 0, "mat": 0, "urn": 0
+                "sand": 0, "earring": 0, "mana": 0, "mat": 0, "urn": 0
             }
         },
         "fediel": {

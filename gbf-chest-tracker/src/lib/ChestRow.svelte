@@ -33,6 +33,11 @@
   import light_urn from "$lib/assets/light-urn.jpg"
   import dark_urn from "$lib/assets/dark-urn.jpg"
   import silver_centrum from "$lib/assets/silver-centrum.jpg"
+  import blue_crystal from "$lib/assets/blue-crystal.jpg"
+  import weapon_plus from "$lib/assets/weapon-plus.jpg"
+  import silver_merit from "$lib/assets/silver-merit.jpg"
+  import gold_merit from "$lib/assets/gold-merit.jpg"
+  import red_merit from "$lib/assets/red-merit.jpg"
 
   // Revans
   import siete_weap1 from "$lib/assets/siete-weap1.jpg";
@@ -61,9 +66,24 @@
   import wamdus_mat from "$lib/assets/wamdus-mat.jpg"
   import fediel_mat from "$lib/assets/fediel-mat.jpg"
   import luwoh_mat from "$lib/assets/luwoh-mat.jpg"
+  import luwoh_mana from "$lib/assets/luwoh-mana.jpg"
+
+  // Gold bar raids
+  import azurite from "$lib/assets/azurite.jpg"
+  import hollow_key from "$lib/assets/hollow-key.jpg"
 
   
   let drop_imgs = {
+    "super_ult": {
+      "subaha": {
+        "sand": sand, "blue_crystal": blue_crystal, "wind_urn": wind_urn, "earth_urn": earth_urn, 
+        "water_urn": water_urn, "fire_urn": fire_urn, "light_urn": light_urn, "dark_urn": dark_urn
+      },
+      "hexa": {
+        "sand": sand, "blue_crystal": blue_crystal, "wind_earring": wind_earring, "earth_earring": earth_earring, 
+        "water_earring": water_earring, "fire_earring": fire_earring, "light_earring": light_earring, "dark_earring": dark_earring
+      }
+    },
     "revans": {
       "siete": {
         "weap1": siete_weap1, "weap2": siete_weap2, "sand": sand,
@@ -93,6 +113,15 @@
     "gold_bar": {
       "pbahahl": {
         "gbar": gold_bar, "low_ring": low_ring, "mid_ring": mid_ring, "red_ring": red_ring
+      },
+      "akasha": {
+        "gbar": gold_bar, "low_ring": low_ring, "mid_ring": mid_ring, "red_ring": red_ring, 
+        "weap_plus1": weapon_plus, "weap_plus2": weapon_plus, "weap_plus3": weapon_plus, 
+        "silver_cent": silver_centrum, "silver_merit": silver_merit, "gold_merit": gold_merit, "red_merit": red_merit, "mat": hollow_key
+      },
+      "gohl": {
+        "gbar": gold_bar, "low_ring": low_ring, "mid_ring": mid_ring, "red_ring": red_ring, 
+        "silver_cent": silver_centrum, "silver_merit": silver_merit, "gold_merit": gold_merit, "red_merit": red_merit, "mat": azurite
       }
     },
     "6d": {
@@ -109,7 +138,7 @@
         "sand": sand, "earring": fire_earring, "mat": wilnas_mat, "urn": fire_urn
       },
       "luwoh": {
-        "sand": sand, "earring": light_earring, "mat": luwoh_mat, "urn": light_urn
+        "sand": sand, "earring": light_earring, "mana": luwoh_mana, "mat": luwoh_mat, "urn": light_urn
       },
       "fediel": {
         "sand": sand, "earring": dark_earring, "mat": fediel_mat, "urn": dark_urn
