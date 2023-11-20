@@ -25,6 +25,30 @@
   import light_earring from "$lib/assets/light-earring.jpg"
   import dark_earring from "$lib/assets/dark-earring.jpg"
 
+  // Magna I
+  import tia_weap1 from "$lib/assets/tia-weap1.jpg"
+  import tia_weap2 from "$lib/assets/tia-weap2.jpg"
+  import tia_weap3 from "$lib/assets/tia-weap3.jpg"
+  import tia_weap4 from "$lib/assets/tia-weap4.jpg"
+  import tia_mat from "$lib/assets/tia-mat.jpg"
+  import levi_weap1 from "$lib/assets/levi-weap1.jpg"
+  import levi_weap2 from "$lib/assets/levi-weap2.jpg"
+  import levi_weap3 from "$lib/assets/levi-weap3.jpg"
+  import levi_weap4 from "$lib/assets/levi-weap4.jpg"
+  import levi_mat from "$lib/assets/levi-mat.jpg"
+  import colo_mat from "$lib/assets/ygg-mat.jpg"
+  import ygg_mat from "$lib/assets/ygg-mat.jpg"
+  import lumi_weap1 from "$lib/assets/lumi-weap1.jpg"
+  import lumi_weap2 from "$lib/assets/lumi-weap2.jpg"
+  import lumi_weap3 from "$lib/assets/lumi-weap3.jpg"
+  import lumi_weap4 from "$lib/assets/lumi-weap4.jpg"
+  import lumi_mat from "$lib/assets/lumi-mat.jpg"
+  import celeste_weap1 from "$lib/assets/celeste-weap1.jpg"
+  import celeste_weap2 from "$lib/assets/celeste-weap2.jpg"
+  import celeste_weap3 from "$lib/assets/celeste-weap3.jpg"
+  import celeste_weap4 from "$lib/assets/celeste-weap4.jpg"
+  import celeste_mat from "$lib/assets/celeste-mat.jpg"
+
   // Common mats
   import fire_urn from "$lib/assets/fire-urn.jpg"
   import wind_urn from "$lib/assets/wind-urn.jpg"
@@ -72,7 +96,31 @@
   import azurite from "$lib/assets/azurite.jpg"
   import hollow_key from "$lib/assets/hollow-key.jpg"
 
-  
+  // Malice
+  import malice_frag from "$lib/assets/malice-frag.jpg"
+  import malice_shield from "$lib/assets/malice-shield.jpg"
+  import tiamal_weap1 from "$lib/assets/tiamal-weap1.jpg"
+  import tiamal_weap2 from "$lib/assets/tiamal-weap2.jpg"
+  import levimal_weap1 from "$lib/assets/levimal-weap1.jpg"
+  import levimal_weap2 from "$lib/assets/levimal-weap2.jpg"
+  import lumimal_weap1 from "$lib/assets/lumimal-weap1.jpg"
+  import lumimal_weap2 from "$lib/assets/lumimal-weap2.jpg"
+  import phronesis_weap1 from "$lib/assets/phronesis-weap1.jpg"
+  import phronesis_weap2 from "$lib/assets/phronesis-weap2.jpg"
+  import phronesis_weap3 from "$lib/assets/phronesis-weap3.jpg"
+  import animus_weap1 from "$lib/assets/animus-weap1.jpg"
+  import animus_weap2 from "$lib/assets/animus-weap2.jpg"
+  import legion_weap1 from "$lib/assets/legion-weap1.jpg"
+  import legion_weap2 from "$lib/assets/legion-weap2.jpg"
+  import legion_weap3 from "$lib/assets/legion-weap3.jpg"
+  import legion_weap4 from "$lib/assets/legion-weap4.jpg"
+  import tiamal_anima from "$lib/assets/tiamal-anima.jpg"
+  import lumimal_anima from "$lib/assets/lumimal-anima.jpg"
+  import levimal_anima from "$lib/assets/levimal-anima.jpg"
+  import phronesis_anima from "$lib/assets/phronesis-anima.jpg"
+  import animus_anima from "$lib/assets/animus-anima.jpg"
+  import legion_anima from "$lib/assets/legion-anima.jpg"
+
   let drop_imgs = {
     "super_ult": {
       "subaha": {
@@ -163,12 +211,32 @@
       "osiris": {
         "sand": sand, "silver_cent": silver_centrum, "urn": dark_urn
       }
+    },
+    "malice": {
+      "tiamal": {
+        "sand": sand, "mal_frag": malice_frag, "anima": tiamal_anima, "weap1": tiamal_weap1, "weap2": tiamal_weap2, "weap3": tia_weap1, "weap4": tia_weap2, "weap5": tia_weap3, "weap6": tia_weap4, "mat": tia_mat, "shield": malice_shield
+      },
+      "phronesis": {
+        "sand": sand, "mal_frag": malice_frag, "anima": phronesis_anima, "weap1": phronesis_weap1, "weap2": phronesis_weap2, "weap3": phronesis_weap3, "mat": ygg_mat
+      },
+      "levimal": {
+        "sand": sand, "mal_frag": malice_frag, "anima": levimal_anima, "weap1": levimal_weap1, "weap2": levimal_weap2, "weap3": levi_weap1, "weap4": levi_weap2, "weap5": levi_weap3, "weap6": levi_weap4, "mat": levi_mat, "shield": malice_shield
+      },
+      "legion": {
+        "sand": sand, "mal_frag": malice_frag, "anima": legion_anima, "weap1": legion_weap1, "weap2": legion_weap2, "weap3": legion_weap3, "weap4": legion_weap4, "mat": colo_mat
+      },
+      "lumimal": {
+        "sand": sand, "mal_frag": malice_frag, "anima": lumimal_anima, "weap1": lumimal_weap1, "weap2": lumimal_weap2, "weap3": lumi_weap1, "weap4": lumi_weap2, "weap5": lumi_weap3, "weap6": lumi_weap4, "mat": lumi_mat, "shield": malice_shield
+      },
+      "animus": {
+        "sand": sand, "mal_frag": malice_frag, "anima": animus_anima, "weap1": animus_weap1, "weap2": animus_weap2, "weap3": celeste_weap1, "weap4": celeste_weap2, "weap5": celeste_weap3, "weap6": celeste_weap4, "mat": celeste_mat
+      }
     }
   }
 
   export let raid_tier = ""
   export let raid_name = ""
-  export let chest_name = ""
+  export let chest_name = ""  
 
   let total_count = 0
 
@@ -176,14 +244,15 @@
     "mvp": red_chest_img,
     "host": red_chest_img,
     "blue": blue_chest_img,
-    "gold": gold_chest_img
+    "gold": gold_chest_img, "gold2": gold_chest_img
   }
 
   let chest_class = {
     "mvp": "ring-red-600 dark:ring-red-600",
     "host": "ring-red-600 dark:ring-red-600",
     "blue": "ring-blue-600 dark:ring-blue-600",
-    "gold": "ring-yellow-300 dark:ring-yellow-300"
+    "gold": "ring-yellow-300 dark:ring-yellow-300",
+    "gold2": "ring-yellow-300 dark:ring-yellow-300"
   }
 
   let multi_drops = ["mat", "weap_plus"]
@@ -213,7 +282,7 @@
   $: $DropStore, countDrops(raid_tier, raid_name, chest_name);
 </script>
 
-<div class="grid grid-cols-5 rounded-lg gap-2 space-x-4 p-5 bg-gray-200 justify-items-center items-center">
+<div class="grid mb-2 grid-cols-5 rounded-lg gap-2 space-x-4 p-5 bg-gray-200 justify-items-center items-center">
   <div class="row-span-3"><Avatar src={chest_imgs[chest_name]} size="lg" border class={chest_class[chest_name]} /><div class="mt-2 bg-white align-middle text-center"><b>{total_count}</b></div></div>
   {#each Object.entries($DropStore[raid_tier][raid_name][chest_name]) as [item_name, value]}
     <div><ChestItem item_img={drop_imgs[raid_tier][raid_name][item_name]} raid_tier={raid_tier} raid_name={raid_name} chest_name={chest_name} item_name={item_name} item_count={getItemCount(item_name)}></ChestItem></div>

@@ -135,6 +135,56 @@ const DropStore = writable({
                 "sand": 0, "silver_cent": 0, "urn": 0
             }
         }
+    },
+    "malice": {
+        "tiamal": {
+            "gold": {
+                "sand": 0, "mal_frag": 0, "anima": 0
+            },
+            "gold2": {
+                "weap1": 0, "weap2": 0, "weap3": 0, "weap4": 0, "weap5": 0, "weap6": 0, "shield": 0, "mat": 0, "anima": 0
+            }
+        },
+        "phronesis": {
+            "gold": {
+                "sand": 0, "mal_frag": 0, "anima": 0
+            },
+            "gold2": {
+                "weap1": 0, "weap2": 0, "weap3": 0, "mat": 0, "anima": 0
+            }
+        },
+        "levimal": {
+            "gold": {
+                "sand": 0, "mal_frag": 0, "anima": 0
+            },
+            "gold2": {
+                "weap1": 0, "weap2": 0, "weap3": 0, "weap4": 0, "weap5": 0, "weap6": 0, "shield": 0, "mat": 0, "anima": 0
+            }
+        },
+        "legion": {
+            "gold": {
+                "sand": 0, "mal_frag": 0, "anima": 0
+            },
+            "gold2": {
+                "weap1": 0, "weap2": 0, "weap3": 0, "weap4": 0, "mat": 0, "anima": 0
+            }
+        },
+        "lumimal": {
+            "gold": {
+                "sand": 0, "mal_frag": 0, "anima": 0
+            },
+            "gold2": {
+                "weap1": 0, "weap2": 0, "weap3": 0, "weap4": 0, "weap5": 0, "weap6": 0, "shield": 0, "mat": 0, "anima": 0
+            }
+        },
+        "animus": {
+            "gold": {
+                "sand": 0, "mal_frag": 0, "anima": 0
+            },
+            "gold2": {
+                "weap1": 0, "weap2": 0, "weap3": 0, "weap4": 0, "weap5": 0, "weap6": 0, "mat": 0, "anima": 0
+            }
+        }
     }
 })
 

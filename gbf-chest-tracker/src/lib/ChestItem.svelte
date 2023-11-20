@@ -21,7 +21,7 @@
   <div class="row-span-3 col-span-2 text-center">
     <div class="relative">
       <button on:click={() => incrementCount(raid_tier, raid_name, chest_name, item_name)}><img src={item_img} alt={item_img_alt} /></button>
-      <div class="absolute mb-3 mr-2 bottom-0 right-0 opacity-90"><p class="text-4xl text-white font-bold tracking-wide">{item_count}</p></div>
+      <div class="absolute mb-2 mr-2 bottom-0 right-0 opacity-90"><p class="text-3xl text-white font-bold">{item_count}</p></div>
     </div>
   </div>
   <div class="col-span-2 bg-white text-center"><b>{$DropStore[raid_tier][raid_name][chest_name][item_name]}</b></div>

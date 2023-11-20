@@ -10,7 +10,8 @@
     "gold_bar": "bg-raidBanner", "pbahahl": "bg-pbhlBanner", "akasha": "bg-akashaBanner", "gohl": "bg-gohlBanner",
     "6d": "bg-raidBanner", "ewiyar": "bg-ewiyarBanner", "wilnas": "bg-wilnasBanner", "fediel": "bg-fedielBanner", "luwoh": "bg-luwohBanner", "wamdus": "bg-wamdusBanner", "galleon": "bg-galleonBanner",
     "ennead": "bg-raidBanner", "atum": "bg-atumBanner", "tefnut": "bg-tefnutBanner", "bennu": "bg-bennuBanner", "ra": "bg-raBanner", "horus": "bg-horusBanner", "osiris": "bg-osirisBanner",
-    "super_ult": "bg-raidBanner", "subaha": "bg-raidBanner", "hexa": "bg-raidBanner"
+    "super_ult": "bg-raidBanner", "subaha": "bg-raidBanner", "hexa": "bg-raidBanner",
+    "malice": "", "tiamal": "", "phronesis": "", "levimal": "", "legion": "", "lumimal": "", "animus": ""
   }
 </script>
 

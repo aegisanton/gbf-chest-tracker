@@ -10,7 +10,8 @@
     "gold_bar": "Gold Bar Raids", "pbahahl": "Proto Bahamut HL", "akasha": "Akasha", "gohl": "Grand Order HL",
     "super_ult": "Super Ultimate", "subaha": "Super Ultimate Bahamut", "hexa": "Hexachromatic Hierarch",
     "6d": "Six Dragons", "ewiyar": "Ewiyar", "galleon": "Galleon", "wamdus": "Wamdus", "wilnas": "Wilnas", "luwoh": "Lu Woh", "fediel": "Fediel",
-    "ennead": "Ennead", "ra": "Ra", "bennu": "Bennu", "tefnut": "Tefnut", "atum": "Atum", "horus": "Horus", "osiris": "Osiris"
+    "ennead": "Ennead", "ra": "Ra", "bennu": "Bennu", "tefnut": "Tefnut", "atum": "Atum", "horus": "Horus", "osiris": "Osiris",
+    "malice": "Malice & Menace", "tiamal": "Tiamat Malice", "phronesis": "Phronesis", "levimal": "Leviathan Malice", "legion": "Legion Void", "lumimal": "Luminiera Malice", "animus": "Anima-Animus Core"
  }
 
  let raid_banners = {
