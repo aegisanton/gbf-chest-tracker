@@ -186,6 +186,19 @@
     "gold": "ring-yellow-300 dark:ring-yellow-300"
   }
 
+  let multi_drops = ["mat", "weap_plus"]
+
+  function getItemCount(item_name) {
+    if (multi_drops.includes(item_name.replace(/[0-9]+$/, ""))) {
+      let matches = item_name.match(/[0-9]+$/);
+      if (matches) {
+        let number = matches[0];
+        return "x" + number
+      } 
+    }
+    return ""
+  }
+
   function countDrops(raid_tier, raid_name, chest_name) {
     var sum = 0;
     var drops = $DropStore[raid_tier][raid_name][chest_name]
@@ -203,6 +216,6 @@
 <div class="grid grid-cols-5 rounded-lg gap-2 space-x-4 p-5 bg-gray-200 justify-items-center items-center">
   <div class="row-span-3"><Avatar src={chest_imgs[chest_name]} size="lg" border class={chest_class[chest_name]} /><div class="mt-2 bg-white align-middle text-center"><b>{total_count}</b></div></div>
   {#each Object.entries($DropStore[raid_tier][raid_name][chest_name]) as [item_name, value]}
-    <div><ChestItem item_img={drop_imgs[raid_tier][raid_name][item_name]} raid_tier={raid_tier} raid_name={raid_name} chest_name={chest_name} item_name={item_name}></ChestItem></div>
+    <div><ChestItem item_img={drop_imgs[raid_tier][raid_name][item_name]} raid_tier={raid_tier} raid_name={raid_name} chest_name={chest_name} item_name={item_name} item_count={getItemCount(item_name)}></ChestItem></div>
   {/each}
 </div>
