@@ -69,10 +69,9 @@
             for (const [raid_name, obj2] of Object.entries(obj1)) {
               for (const [chest_name, obj3] of Object.entries(obj2)) {
                 for (const [item_name, val] of Object.entries(obj3)) {
-                  let exists = $DropStore[raid_tier][raid_name][chest_name][item_name]
-                  if (exists.isInteger()) {
-                    $DropStore[raid_tier][raid_name][chest_name][item_name] = val
-                  }
+                    if (typeof $DropStore[raid_tier][raid_name][chest_name][item_name] == 'number') {
+                      $DropStore[raid_tier][raid_name][chest_name][item_name] = val
+                    }
                 }
               }
             }
