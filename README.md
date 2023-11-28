@@ -11,9 +11,9 @@ The app is useful for tracking aggregate statistics. Gone are the days of fillin
 
 # How to use the app
 
-Simply navigate to the app and log in with your Google account. You can then open the tabs for the raids you want to farm, and simply click the different drops to increment their counter by one. 
+Simply navigate to the app and log in with your Google account. You can then open the tabs for the raids you want to farm and click the different drops to increment their counter by one. If you misclick, you can decrement the counter by right-clicking.
 
-To avoid constant writes to the database, the user has to manually sync their data to save their progress. Any drops that have not been synced will disappear if you refresh the page or close down the tab. You can view the date and time for when your data was last synced at the top of the page. Simply press the sync button to save your progress (but please avoid doing this too often!). I recommend just doing it right before you end a farming session. The app will also automatically attempt to sync your data every 30 minutes from when you open the tab. 
+To avoid constant writes to the database, the user has to manually sync their data to save their progress. Any drops that have not been synced will disappear if you refresh the page or close down the tab. You can view the date and time for when your data was last synced at the top of the page. Simply press the sync button to save your progress (but please avoid doing this too often!). I recommend just doing it right before you end a farming session. The app will also automatically attempt to sync your data every 10 minutes from when you open the tab. 
 
 # Planned features
 
