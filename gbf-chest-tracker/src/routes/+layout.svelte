@@ -63,7 +63,6 @@
       let q = doc(db, "drops", $session.user?.uid);
       const docSnap = await getDoc(q)
       .then((res) => {
-        console.log(res.data())
         const obj = res.data()
         if (obj) {
           for (const [raid_tier, obj1] of Object.entries(obj.drops)) {
@@ -71,8 +70,7 @@
               for (const [chest_name, obj3] of Object.entries(obj2)) {
                 for (const [item_name, val] of Object.entries(obj3)) {
                   let exists = $DropStore[raid_tier][raid_name][chest_name][item_name]
-                  if (exists) {
-                    console.log("Exists")
+                  if (exists.isInteger()) {
                     $DropStore[raid_tier][raid_name][chest_name][item_name] = val
                   }
                 }
