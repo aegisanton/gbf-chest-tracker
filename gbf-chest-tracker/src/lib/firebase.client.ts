@@ -1,3 +1,12 @@
+import { VERCEL_FIREBASE_API_KEY,
+         VERCEL_FIREBASE_APP_ID,
+         VERCEL_FIREBASE_AUTH_DOMAIN,
+         VERCEL_FIREBASE_STORAGE_BUCKET,
+         VERCEL_FIREBASE_MESSAGING_SENDER_ID,
+         VERCEL_FIREBASE_MEASUREMENT_ID,
+         VERCEL_FIREBASE_PROJECT_ID
+ } from '$env/static/private';
+
 import { initializeApp } from 'firebase/app';
 import { connectAuthEmulator, getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
@@ -12,14 +21,13 @@ export let app: FirebaseApp;
 export let auth: Auth;
 
 const firebaseConfig = {
- apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
- appId: import.meta.env.VITE_FIREBASE_APP_ID,
- useEmulator: import.meta.env.VITE_FIREBASE_USE_EMULATOR === 'true',
- authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
- storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
- messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
- measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
- projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID
+ apiKey: import.meta.env.VERCEL_FIREBASE_API_KEY,
+ appId: import.meta.env.VERCEL_FIREBASE_APP_ID,
+ authDomain: import.meta.env.VERCEL_FIREBASE_AUTH_DOMAIN,
+ storageBucket: import.meta.env.VERCEL_FIREBASE_STORAGE_BUCKET,
+ messagingSenderId: import.meta.env.VERCEL_FIREBASE_MESSAGING_SENDER_ID,
+ measurementId: import.meta.env.VERCEL_FIREBASE_MEASUREMENT_ID,
+ projectId: import.meta.env.VERCEL_FIREBASE_PROJECT_ID
 };
 
 export const initializeFirebase = () => {
