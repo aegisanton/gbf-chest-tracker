@@ -21,13 +21,13 @@ export let app: FirebaseApp;
 export let auth: Auth;
 
 const firebaseConfig = {
- apiKey: VITE_FIREBASE_API_KEY,
- appId: VITE_FIREBASE_APP_ID,
- authDomain: VITE_FIREBASE_AUTH_DOMAIN,
- storageBucket: VITE_FIREBASE_STORAGE_BUCKET,
- messagingSenderId: VITE_FIREBASE_MESSAGING_SENDER_ID,
- measurementId:VITE_FIREBASE_MEASUREMENT_ID,
- projectId: VITE_FIREBASE_PROJECT_ID
+ apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+ appId: import.meta.env.VITE_FIREBASE_APP_ID,
+ authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+ storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+ messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+ measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
+ projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID
 };
 
 export const initializeFirebase = () => {
