@@ -30,6 +30,6 @@
     </div>
   </div>
   <div class="col-span-2 bg-white text-center"><b>{$DropStore[raid_tier][raid_name][chest_name][item_name]}</b></div>
-  <div class="bg-green-200 text-center text-sm">{(100*($DropStore[raid_tier][raid_name][chest_name][item_name] / (getTotal(raid_tier, raid_name, chest_name) ? getTotal(raid_tier, raid_name, chest_name) : 1))).toFixed(1)}%</div>
+  <div class="bg-green-200 text-center text-sm">{(100*($DropStore[raid_tier][raid_name][chest_name][item_name] / (getTotal(raid_tier, raid_name, chest_name) ? getTotal(raid_tier, raid_name, chest_name) : 1))).toFixed(2)}%</div>
   <div class="bg-black text-white text-center text-sm">{0}%</div>
 </div>  
