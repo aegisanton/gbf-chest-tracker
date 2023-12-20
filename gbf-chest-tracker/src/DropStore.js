@@ -73,9 +73,9 @@ const DropStore = writable({
         }
     },
     "arcarum": {
-        "the_world": {
+        "the_world_raid": {
             "blue": {
-                "sand": 0, "world_idean": 0, "temperance_idean": 0, "judgement_idean": 0, "hangedman_idean": 0, "tower_idean": 0,
+                "sand": 0, "mat2": 0, "temperance_idean": 0, "judgement_idean": 0, "hangedman_idean": 0, "tower_idean": 0,
                 "justice_idean": 0, "moon_idean": 0, "devil_idean": 0, "sun_idean": 0, "star_idean": 0, "death_idean": 0
             }
         }

@@ -8,6 +8,7 @@
   let banner_imgs = {
     "revans": "bg-raidBanner", "siete": "bg-sieteBanner", "sieg": "bg-siegBanner", "mugen": "bg-mugenBanner", "agastia": "bg-agastiaBanner", "cosmos": "bg-cosmosBanner", "diaspora": "bg-diasporaBanner",
     "gold_bar": "bg-raidBanner", "pbahahl": "bg-pbhlBanner", "akasha": "bg-akashaBanner", "gohl": "bg-gohlBanner",
+    "arcarum": "bg-raidBanner", "the_world_raid": "bg-raidBanner",
     "6d": "bg-raidBanner", "ewiyar": "bg-ewiyarBanner", "wilnas": "bg-wilnasBanner", "fediel": "bg-fedielBanner", "luwoh": "bg-luwohBanner", "wamdus": "bg-wamdusBanner", "galleon": "bg-galleonBanner",
     "ennead": "bg-raidBanner", "atum": "bg-atumBanner", "tefnut": "bg-tefnutBanner", "bennu": "bg-bennuBanner", "ra": "bg-raBanner", "horus": "bg-horusBanner", "osiris": "bg-osirisBanner",
     "super_ult": "bg-raidBanner", "subaha": "bg-subahaBanner", "hexa": "bg-raidBanner",

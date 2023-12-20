@@ -121,6 +121,19 @@
   import animus_anima from "$lib/assets/animus-anima.jpg"
   import legion_anima from "$lib/assets/legion-anima.jpg"
 
+  // Arcarum
+  import world_idean from "$lib/assets/world-idean.jpg"
+  import temperance_idean from "$lib/assets/temperance-idean.jpg"
+  import judgement_idean from "$lib/assets/judgement-idean.jpg"
+  import hangedman_idean from "$lib/assets/hangedman-idean.jpg"
+  import tower_idean from "$lib/assets/tower-idean.jpg"
+  import justice_idean from "$lib/assets/justice-idean.jpg"
+  import moon_idean from "$lib/assets/moon-idean.jpg"
+  import devil_idean from "$lib/assets/devil-idean.jpg"
+  import sun_idean from "$lib/assets/sun-idean.jpg"
+  import star_idean from "$lib/assets/star-idean.jpg"
+  import death_idean from "$lib/assets/death-idean.jpg"
+
   let drop_imgs = {
     "super_ult": {
       "subaha": {
@@ -170,6 +183,12 @@
       "gohl": {
         "gbar": gold_bar, "low_ring": low_ring, "mid_ring": mid_ring, "red_ring": red_ring, 
         "silver_cent": silver_centrum, "silver_merit": silver_merit, "gold_merit": gold_merit, "red_merit": red_merit, "mat": azurite
+      }
+    },
+    "arcarum": {
+      "the_world_raid": {
+        "sand": sand, "world_idean2": world_idean, "temperance_idean": temperance_idean, "judgement_idean": judgement_idean, "hangedman_idean": hangedman_idean, "tower_idean": tower_idean,
+        "justice_idean": justice_idean, "moon_idean": moon_idean, "devil_idean": devil_idean, "sun_idean": sun_idean, "star_idean": star_idean, "death_idean": death_idean
       }
     },
     "6d": {
