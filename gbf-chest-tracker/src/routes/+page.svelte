@@ -9,7 +9,7 @@
     "revans": "Revans", "siete": "Seofon", "sieg": "Siegfried", "diaspora": "Diaspora", "mugen": "Mugen", "cosmos": "Cosmos", "agastia": "Agastia",
     "gold_bar": "Gold Bar Raids", "pbahahl": "Proto Bahamut HL", "akasha": "Akasha", "gohl": "Grand Order HL",
     "super_ult": "Super Ultimate", "subaha": "Super Ultimate Bahamut", "hexa": "Hexachromatic Hierarch",
-    "arcarum": "Arcarum",
+    "arcarum": "Arcarum", "the_world_raid": "The World (Raid)",
     "6d": "Six Dragons", "ewiyar": "Ewiyar", "galleon": "Galleon", "wamdus": "Wamdus", "wilnas": "Wilnas", "luwoh": "Lu Woh", "fediel": "Fediel",
     "ennead": "Ennead", "ra": "Ra", "bennu": "Bennu", "tefnut": "Tefnut", "atum": "Atum", "horus": "Horus", "osiris": "Osiris",
     "malice": "Malice & Menace", "tiamal": "Tiamat Malice", "phronesis": "Phronesis", "levimal": "Leviathan Malice", "legion": "Legion Void", "lumimal": "Luminiera Malice", "animus": "Anima-Animus Core"

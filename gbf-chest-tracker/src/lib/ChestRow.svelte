@@ -187,7 +187,7 @@
     },
     "arcarum": {
       "the_world_raid": {
-        "sand": sand, "world_idean2": world_idean, "temperance_idean": temperance_idean, "judgement_idean": judgement_idean, "hangedman_idean": hangedman_idean, "tower_idean": tower_idean,
+        "sand": sand, "mat2": world_idean, "temperance_idean": temperance_idean, "judgement_idean": judgement_idean, "hangedman_idean": hangedman_idean, "tower_idean": tower_idean,
         "justice_idean": justice_idean, "moon_idean": moon_idean, "devil_idean": devil_idean, "sun_idean": sun_idean, "star_idean": star_idean, "death_idean": death_idean
       }
     },
