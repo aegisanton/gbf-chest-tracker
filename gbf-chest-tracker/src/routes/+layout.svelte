@@ -52,7 +52,7 @@
     await getUserData()
    }
        
-   const interval = setInterval(syncData, 60000); // 1 minute
+   const interval = setInterval(syncData, 600000); // 10 minutes
 
   return () => clearInterval(interval)
 

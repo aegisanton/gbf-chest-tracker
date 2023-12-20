@@ -5,37 +5,37 @@ const RateStore = writable({
         "siete": {
             "blue": {
                 "weap1": 0, "weap2": 0, "sand": 0,
-                "mat1": 0, "mat2": 0, "mat3": 0, "mat4": 0, "mat10": 0
+                "mat2": 0, "mat3": 0, "mat4": 0, "mat10": 0
             }
         },
         "sieg": {
             "blue": {
                 "weap1": 0, "weap2": 0, "sand": 0,
-                "mat1": 0, "mat2": 0, "mat3": 0, "mat4": 0, "mat10": 0
+                "mat2": 0, "mat3": 0, "mat4": 0, "mat10": 0
             }
         },
         "diaspora": {
             "blue": {
                 "weap1": 0, "weap2": 0, "sand": 0,
-                "mat1": 0, "mat2": 0, "mat3": 0, "mat4": 0, "mat10": 0
+                "mat2": 0, "mat3": 0, "mat4": 0, "mat10": 0
             }
         },
         "mugen": {
             "blue": {
                 "weap1": 0, "weap2": 0, "sand": 0,
-                "mat1": 0, "mat2": 0, "mat3": 0, "mat4": 0, "mat10": 0
+                "mat2": 0, "mat3": 0, "mat4": 0, "mat10": 0
             }
         },
         "cosmos": {
             "blue": {
                 "weap1": 0, "weap2": 0, "sand": 0,
-                "mat1": 0, "mat2": 0, "mat3": 0, "mat4": 0, "mat10": 0
+                "mat2": 0, "mat3": 0, "mat4": 0, "mat10": 0
             }
         },
         "agastia": {
             "blue": {
                 "weap1": 0, "weap2": 0, "sand": 0,
-                "mat1": 0, "mat2": 0, "mat3": 0, "mat4": 0, "mat10": 0
+                "mat2": 0, "mat3": 0, "mat4": 0, "mat10": 0
             }
         }
     },
@@ -69,6 +69,14 @@ const RateStore = writable({
             "gold": {
                 "sand": 0, "blue_crystal": 0, "wind_earring": 0, "earth_earring": 0,
                 "water_earring": 0, "fire_earring": 0, "light_earring": 0, "dark_earring": 0
+            }
+        }
+    },
+    "arcarum": {
+        "the_world": {
+            "blue": {
+                "sand": 0, "world_idean": 0, "temperance_idean": 0, "judgement_idean": 0, "hangedman_idean": 0, "tower_idean": 0,
+                "justice_idean": 0, "moon_idean": 0, "devil_idean": 0, "sun_idean": 0, "star_idean": 0, "death_idean": 0
             }
         }
     },
